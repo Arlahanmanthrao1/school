@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = "1234567890"; // Replace with your WhatsApp number
+const WHATSAPP_NUMBER = "9493682828"; // Replace with your WhatsApp number
 
 const WhatsAppButton = () => {
   return (
