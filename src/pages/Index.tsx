@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { BookOpen, Users, Trophy, GraduationCap, Star, Clock, Megaphone, ArrowRight } from "lucide-react";
-import heroImg from "@/assets/hero-school.jpg";
+
+const heroImg =
+  "https://res.cloudinary.com/dl8hswxt2/image/upload/v1771230706/hero-school_orbhm6.jpg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },

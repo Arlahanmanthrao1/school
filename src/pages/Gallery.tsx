@@ -2,13 +2,28 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
-import galleryLab from "@/assets/gallery-lab.jpg";
-import gallerySports from "@/assets/gallery-sports.jpg";
-import galleryClassroom from "@/assets/gallery-classroom.jpg";
-import galleryEvent from "@/assets/gallery-event.jpg";
-import galleryLibrary from "@/assets/gallery-library.jpg";
-import galleryArt from "@/assets/gallery-art.jpg";
-import galleryComputer from "@/assets/gallery-computer.jpg";
+// Gallery Images (Cloudinary)
+const galleryLab =
+  "https://res.cloudinary.com/dl8hswxt2/image/upload/v1771230701/gallery-lab_yl2t8l.jpg";
+
+const gallerySports =
+  "https://res.cloudinary.com/dl8hswxt2/image/upload/v1771230703/gallery-sports_rvtdbz.jpg";
+
+const galleryClassroom =
+  "https://res.cloudinary.com/dl8hswxt2/image/upload/v1771230700/gallery-classroom_pask82.jpg";
+
+const galleryEvent =
+  "https://res.cloudinary.com/dl8hswxt2/image/upload/v1771230700/gallery-event_wm5noa.jpg";
+
+const galleryLibrary =
+  "https://res.cloudinary.com/dl8hswxt2/image/upload/v1771230703/gallery-library_hhrmrt.jpg";
+
+const galleryArt =
+  "https://res.cloudinary.com/dl8hswxt2/image/upload/v1771230699/gallery-art_rrzyrq.jpg";
+
+const galleryComputer =
+  "https://res.cloudinary.com/dl8hswxt2/image/upload/v1771230698/gallery-computer_xsdzys.jpg";
+
 
 const images = [
   { src: galleryClassroom, alt: "Modern classroom with students learning", category: "Campus" },

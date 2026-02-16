@@ -27,7 +27,7 @@ const About = () => {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
             <h1 className="text-4xl lg:text-5xl font-serif font-bold text-primary-foreground mb-4">About Us</h1>
             <p className="text-lg text-primary-foreground/80">
-              Discover the story, mission, and people behind Greenwood Academy.
+              Discover the story, mission, and people behind Global Techno School.
             </p>
           </motion.div>
         </div>
