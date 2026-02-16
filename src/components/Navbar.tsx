@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import schoolLogo from "@/assets/school-logo.png";
+
+const SCHOOL_LOGO =
+  "https://res.cloudinary.com/dl8hswxt2/image/upload/v1771230703/School-logo_ru86ij.png";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -35,20 +37,33 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <nav className="container mx-auto px-4 py-3 flex items-center justify-between" aria-label="Main navigation">
+      <nav className="container mx-auto px-4 py-3 flex items-center justify-between">
+        {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <img src={schoolLogo} alt="Greenwood Academy logo" className="w-11 h-11 rounded-full object-cover" />
+          <img
+            src={SCHOOL_LOGO}
+            alt="School logo"
+            className="w-11 h-11 rounded-full object-cover"
+          />
           <div>
-            <span className={`font-serif font-bold text-lg leading-tight block transition-colors ${scrolled ? 'text-foreground' : 'text-primary-foreground'}`}>
-              Global Techno 
+            <span
+              className={`font-serif font-bold text-lg leading-tight block transition-colors ${
+                scrolled ? "text-foreground" : "text-primary-foreground"
+              }`}
+            >
+              Global Techno
             </span>
-            <span className={`text-xs font-medium tracking-wider uppercase transition-colors ${scrolled ? 'text-accent' : 'text-secondary'}`}>
+            <span
+              className={`text-xs font-medium tracking-wider uppercase transition-colors ${
+                scrolled ? "text-accent" : "text-secondary"
+              }`}
+            >
               School
             </span>
           </div>
         </Link>
 
-        {/* Desktop nav */}
+        {/* Desktop Nav */}
         <ul className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
             <li key={link.to}>
@@ -56,8 +71,12 @@ const Navbar = () => {
                 to={link.to}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                   location.pathname === link.to
-                    ? scrolled ? "bg-primary text-primary-foreground" : "bg-primary-foreground/20 text-primary-foreground"
-                    : scrolled ? "text-foreground hover:bg-muted" : "text-primary-foreground/80 hover:text-primary-foreground"
+                    ? scrolled
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-primary-foreground/20 text-primary-foreground"
+                    : scrolled
+                    ? "text-foreground hover:bg-muted"
+                    : "text-primary-foreground/80 hover:text-primary-foreground"
                 }`}
               >
                 {link.label}
@@ -74,18 +93,19 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* Mobile toggle */}
+        {/* Mobile Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className={`md:hidden p-2 rounded-md transition-colors ${scrolled ? 'text-foreground' : 'text-primary-foreground'}`}
+          className={`md:hidden p-2 rounded-md transition-colors ${
+            scrolled ? "text-foreground" : "text-primary-foreground"
+          }`}
           aria-label={isOpen ? "Close menu" : "Open menu"}
-          aria-expanded={isOpen}
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
